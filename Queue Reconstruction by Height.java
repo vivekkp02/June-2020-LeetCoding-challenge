@@ -9,6 +9,20 @@ Input:
 
 Output:
 [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
+
+Solution Approch
+================
+Sort based on height and K value.
+[[7,0], [7,1], [6,1], [5,0], [5,2], [4,4]]
+
+Now we construct the queue using the sorted person list .
+
+1. Add [7, 0] at 0 --> [[7,0]]
+2. Add [7, 1] at 1 --> [[7,0], [7,1]]
+3. Add [6, 1] at 1 --> [[7,0], [6, 1, [7,1]]
+4. Add  [5,0] at 0 --> [[5,0], [7,0], [6, 1], [7,1]]
+5. Add [5, 2] at 2 --> [[5,0], [7,0], [5, 2], [6, 1], [7,1]]
+6. Add [4, 4] at 4 --> [[5,0], [7,0], [5, 2], [6, 1],[4, 4], [7,1]] which is output
 */
 
 class Solution {
