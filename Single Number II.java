@@ -31,4 +31,27 @@ class Solution {
         
         return result;        
     }
+    
+    /*
+               1010 <-  1010        1010        1010
+               1010     1010 <-     1010        1010
+               1101     1101        1101 <-     1101
+               1010     1010        1010        1010 <-
+    
+    ones ::    1010 |   0000    |   0101    |   1101
+    twice ::   0000 |   1010    |   0010    |   
+    we reset to 0 if count is 3  
+    
+    */    
+    public int singleNumber(int[] nums) {
+        int ones = 0, twice = 0, thrice = 0;
+        for(int n : nums){
+            twice = twice | (ones & n);
+            ones = ones ^ n;
+            thrice = ones & twice;
+            twice &= ~thrice;
+            ones &= ~thrice;
+        }
+        return ones;        
+    }
 }
