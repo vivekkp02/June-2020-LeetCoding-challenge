@@ -19,7 +19,7 @@ class Solution {
         // if n = 3, then (1,1,1)
         int[] dp = new int[n+1];
         for(int x=1; x<=n; x++){
-            int y = 1;
+            int y = 1; // take all 1s
             int sq = 1;
             int minVal = x;
             while(sq <= x){
